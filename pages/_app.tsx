@@ -1,12 +1,17 @@
 import '../styles/globals.css'
 import { AppProps } from 'next/app'
-import { ChakraProvider } from '@chakra-ui/react'
+import { Box, ChakraProvider } from '@chakra-ui/react'
 import Fonts from '../components/fonts'
-function MyApp({ Component, pageProps }: AppProps) {
+import Layout from '../components/Layout/main'
+function MyApp({ Component, pageProps,router }: AppProps) {
   return (
     <ChakraProvider>
       <Fonts/>
-      <Component {...pageProps} />
+      <Layout router={router}>
+      <Box padding={100}>
+      <Component {...pageProps} key={router.route} />
+      </Box>
+      </Layout>
     </ChakraProvider>
   )
 }
