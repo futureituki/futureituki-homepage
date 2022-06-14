@@ -67,7 +67,6 @@ const NavBar = (props) => {
         width={{ base: "full", md: "auto" }}
         alignItems="center"
         flexGrow={1}
-        justifyContent="space-around"
         mt={{ base: 4, md: 0 }}
       >
         <LinkItem href="/works" path={path}>

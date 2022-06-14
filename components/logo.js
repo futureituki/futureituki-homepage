@@ -21,7 +21,7 @@ const Logo = () => {
   return (
     <Link href="/">
       <LogoBox>
-        <Image src="/logo.png" width={20} height={20} />
+        <Image src="/images/logo.png" width={20} height={20} />
       </LogoBox>
     </Link>
   );
