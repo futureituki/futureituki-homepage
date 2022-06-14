@@ -1,14 +1,28 @@
-import { Box, Container } from '@chakra-ui/react'
+import { 
+  Box, 
+  Button, 
+  Container,
+  Flex,
+  Heading,
+  HStack,
+  Link,
+  Stack
+} from '@chakra-ui/react'
+
 import styled from '@emotion/styled'
+import { GiFruitTree } from 'react-icons/gi'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Pricing from '../components/price'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
-// import Main from '../components/Layout/main'
+import Footer from '../components/footer'
+import Card from '../components/card'
 const Home :NextPage = () => {
   const MyImage = styled.span`
   display:inline-block;
+  margin:20px 0;
   width:60%;
   img {
     transition: 200ms ease;
@@ -23,19 +37,35 @@ const Home :NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>
-
-      <Box 
-      textAlign="center">
+      <Section>
       <Box
       borderRadius="lg"
       mb={6}
       p={3}
       textAlign="center"
-      bg="blackAlpha.300"
+      bg="blackAlpha.100"
       css={{backdropFilter:'blur(10px)'}}
       >
         Welcome, My Portfolio, come Japan
       </Box>
+      <Flex display="flex">
+      <Heading 
+      as="h2" 
+      fontWeight="bold"
+      letterSpacing={2}
+      >
+        Sato Itsuki
+      </Heading>
+      <Box>
+        <GiFruitTree fontSize={36}/>
+      </Box>
+      </Flex>
+      <HStack
+      display={{base:"block",md:"flex"}}
+      >
+      <Paragraph>Digital Craftsman ( Artist / Developer / Designer )</Paragraph>
+      <Box 
+      textAlign="center">
       <MyImage>
         <Image 
         src="/images/me.jpg"
@@ -44,11 +74,39 @@ const Home :NextPage = () => {
         />
       </MyImage>
     </Box>
-    <Section>
-      <Paragraph>
-        Hello World
-      </Paragraph>
+      </HStack>
     </Section>
+    <Section delay={0.1}>
+      <Heading as="h3" mb={8} fontSize={24} >
+        Work
+      </Heading>
+      <Paragraph>
+      Takuya is a freelance and a full-stack developer based in Osaka with a passion for building digital services/stuff he wants. He has a knack for all things launching products, from planning and designing all the way to solving real-life problems with code. When not online, he loves hanging out with his camera. Currently, he is living off of his own product called Inkdrop. He publishes content for marketing his products and his YouTube channel called "Dev as Life" has more than 100k subscribers.      </Paragraph>
+      <Box textAlign="center" mt={8} mb={8} p={6}>
+      <Button bg="green.200">
+        <Link href='/works'>
+        My-Portfolio
+        </Link>
+        </Button>
+      </Box>
+    </Section>
+    <Section delay={0.2}>
+      <Box textAlign="center">
+      <Heading as="h3" mb={8} fontSize={32}>
+        Price
+      </Heading>
+      <Card>
+      <Pricing/>
+      <Pricing/>
+      </Card>
+      <Button bg="green.200" mt={8}>
+        <Link href='/works'>
+          Request a job
+        </Link>
+        </Button>
+      </Box>
+    </Section>
+    <Footer/>
   </Container>
     </>
   )
