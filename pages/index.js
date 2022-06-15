@@ -6,29 +6,34 @@ import {
   Heading,
   HStack,
   Link,
-  Stack
+  Image,
 } from '@chakra-ui/react'
 
-import styled from '@emotion/styled'
 import { GiFruitTree } from 'react-icons/gi'
-import type { NextPage } from 'next'
+import { 
+  SiJavascript, 
+  SiPhp, 
+  SiReact, 
+  SiLaravel, 
+  SiNextdotjs,
+  SiTailwindcss,
+  SiWordpress,
+  SiThreedotjs,
+  SiBootstrap,
+  SiOpengl,
+  SiNodedotjs,
+  SiJquery
+ } from 'react-icons/si'
+
 import Head from 'next/head'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Pricing from '../components/price'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import Footer from '../components/footer'
 import Card from '../components/card'
-const Home :NextPage = () => {
-  const MyImage = styled.span`
-  display:inline-block;
-  margin:20px 0;
-  width:60%;
-  img {
-    transition: 200ms ease;
-    border-radius:8em;
-  }
-  `
+import { ListContent , ListHeading} from '../components/list'
+const Home = () => {
   return (
     <>
       <Head>
@@ -48,6 +53,9 @@ const Home :NextPage = () => {
       >
         Welcome, My Portfolio, come Japan
       </Box>
+      <Box
+      zIndex={"sticky"}
+      >
       <Flex display="flex">
       <Heading 
       as="h2" 
@@ -63,18 +71,21 @@ const Home :NextPage = () => {
       <HStack
       display={{base:"block",md:"flex"}}
       >
-      <Paragraph>Digital Craftsman ( Artist / Developer / Designer )</Paragraph>
-      <Box 
-      textAlign="center">
-      <MyImage>
+      <Paragraph>Digital Craftsman ( FrontDeveloper )</Paragraph>
+      <Box align="center" >
         <Image 
         src="/images/me.jpg"
-        width={150}
-        height={150}
+        maxWidth="200px"
+        maxHeight="200px"
+        marginTop={8}
+        borderWidth={3}
+        borderRadius="full"
+        borderStyle="solid"
+        borderColor="green.200"
         />
-      </MyImage>
     </Box>
       </HStack>
+   </Box>
     </Section>
     <Section delay={0.1}>
       <Heading as="h3" mb={8} fontSize={24} >
@@ -91,6 +102,43 @@ const Home :NextPage = () => {
       </Box>
     </Section>
     <Section delay={0.2}>
+      <Box>
+        <Heading 
+        as="h3" 
+        mb={8} 
+        fontSize={32}>
+          Skill
+        </Heading>
+        <ListHeading>
+          Language
+        </ListHeading>
+          <ListContent>
+          <SiPhp fontSize={32}/>
+          <SiJavascript fontSize={24}/>
+          </ListContent>
+        <ListHeading>
+          Framework
+        </ListHeading>
+          <ListContent>
+          <SiLaravel fontSize={24}/>
+          <SiWordpress fontSize={24} />
+          <SiNextdotjs fontSize={24} />
+          </ListContent>
+        <ListHeading>
+          Library
+        </ListHeading>
+          <ListContent>
+          <SiJquery fontSize={24}/>
+          <SiReact fontSize={32}/>
+          <SiNodedotjs fontSize={24}/>
+          <SiTailwindcss fontSize={24}/>
+          <SiBootstrap fontSize={24}/>
+          <SiThreedotjs fontSize={24} />
+          <SiOpengl fontSize={24}/>
+          </ListContent>
+      </Box>
+    </Section>
+    <Section delay={0.4}>
       <Box textAlign="center">
       <Heading as="h3" mb={8} fontSize={32}>
         Price
