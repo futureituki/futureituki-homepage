@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Container,
   Flex,
@@ -7,7 +6,16 @@ import {
   HStack,
   Link,
   Image,
+  Box,
+  Center,
+  Text,
+  Stack,
+  List,
+  ListItem,
+  ListIcon,
+  useColorModeValue,
 } from "@chakra-ui/react";
+import { CheckIcon } from "@chakra-ui/icons";
 
 import { GiFruitTree } from "react-icons/gi";
 import {
@@ -23,17 +31,16 @@ import {
   SiOpengl,
   SiNodedotjs,
   SiJquery,
+  SiTwitter,
 } from "react-icons/si";
 
 import Head from "next/head";
-// import Image from 'next/image'
-import Pricing from "../components/price";
+
 import Section from "../components/section";
 import Paragraph from "../components/paragraph";
-import Footer from "../components/footer";
 import Card from "../components/card";
 import { ListContent, ListHeading } from "../components/list";
-import { TreeSpinner } from "../components/tree-loader";
+import { IoLogoGithub, IoLogoInstagram } from "react-icons/io5";
 const Home = () => {
   return (
     <>
@@ -55,29 +62,29 @@ const Home = () => {
             Welcome, My Portfolio, come Japan
           </Box>
           <Box position="relative" zIndex={3}>
-          <Flex display="flex">
-            <Heading as="h2" fontWeight="bold" letterSpacing={2}>
-              Sato Itsuki
-            </Heading>
-            <Box zIndex={3}>
-              <GiFruitTree fontSize={36} />
-            </Box>
-          </Flex>
-          <HStack display={{ base: "block", md: "flex" }}>
-            <Paragraph>Digital Craftsman ( FrontDeveloper )</Paragraph>
-            <Box align="center" zIndex={3}>
-              <Image
-                src="/images/me.jpg"
-                maxWidth="200px"
-                maxHeight="200px"
-                marginTop={8}
-                borderWidth={3}
-                borderRadius="full"
-                borderStyle="solid"
-                borderColor="green.200"
-              />
-            </Box>
-          </HStack>
+            <Flex display="flex">
+              <Heading as="h2" fontWeight="bold" letterSpacing={2}>
+                Sato Itsuki
+              </Heading>
+              <Box zIndex={3}>
+                <GiFruitTree fontSize={36} />
+              </Box>
+            </Flex>
+            <HStack display={{ base: "block", md: "flex" }}>
+              <Paragraph>Digital Craftsman ( FrontDeveloper )</Paragraph>
+              <Box align="center" zIndex={3}>
+                <Image
+                  src="/images/me.jpg"
+                  maxWidth="200px"
+                  maxHeight="200px"
+                  marginTop={8}
+                  borderWidth={3}
+                  borderRadius="full"
+                  borderStyle="solid"
+                  borderColor="green.200"
+                />
+              </Box>
+            </HStack>
           </Box>
         </Section>
         <Section delay={0.1}>
@@ -124,7 +131,7 @@ const Home = () => {
               <SiTailwindcss fontSize={24} />
               <SiBootstrap fontSize={24} />
               <SiThreedotjs fontSize={24} />
-              <SiOpengl fontSize={24} />
+              <SiOpengl fontSize={32} />
             </ListContent>
           </Box>
         </Section>
@@ -134,15 +141,163 @@ const Home = () => {
               Price
             </Heading>
             <Card>
-              <Pricing />
-              <Pricing />
+              <Center py={6}>
+                <Box
+                  maxW={"250px"}
+                  maxH={"500px"}
+                  bg={useColorModeValue("white", "gray.800")}
+                  boxShadow={"2xl"}
+                  rounded={"md"}
+                  overflow={"hidden"}
+                >
+                  <Stack
+                    textAlign={"center"}
+                    p={6}
+                    color={useColorModeValue("gray.800", "white")}
+                    align={"center"}
+                  >
+                    <Text
+                      fontSize={"sm"}
+                      fontWeight={500}
+                      bg={useColorModeValue("green.50", "green.900")}
+                      p={2}
+                      px={3}
+                      color={"green.500"}
+                      rounded={"full"}
+                    >
+                      Webサイト制作
+                    </Text>
+                    <Stack
+                      direction={"row"}
+                      align={"center"}
+                      justify={"center"}
+                    >
+                      <Text fontSize={"3xl"}>¥</Text>
+                      <Text fontSize={"4xl"} fontWeight={800}>
+                        5000
+                      </Text>
+                      <Text color={"gray.500"}>/1ページ</Text>
+                    </Stack>
+                  </Stack>
+                  <Box
+                    bg={useColorModeValue("gray.50", "gray.900")}
+                    px={6}
+                    py={10}
+                  >
+                    <List spacing={3}>
+                      <ListItem>
+                        <ListIcon as={CheckIcon} color="green.400" />
+                        1ページ追加+3000円
+                      </ListItem>
+                      <ListItem>
+                        <ListIcon as={CheckIcon} color="green.400" />
+                        JavaScriptも対応しています
+                      </ListItem>
+                      <ListItem>
+                        <ListIcon as={CheckIcon} color="green.400" />
+                        既存ページ一部コーディング修正3000円~
+                      </ListItem>
+                      <ListItem>
+                        <ListIcon as={CheckIcon} color="green.400" />
+                        ページコーディング作成　１ページ（極小規模） ⇒ 4500円～
+                      </ListItem>
+                    </List>
+                  </Box>
+                </Box>
+              </Center>
+              <Center py={6} m={4}>
+                <Box
+                  maxW={"250px"}
+                  maxH={"500px"}
+                  bg={useColorModeValue("white", "gray.800")}
+                  boxShadow={"2xl"}
+                  rounded={"md"}
+                  overflow={"hidden"}
+                >
+                  <Stack
+                    textAlign={"center"}
+                    p={6}
+                    color={useColorModeValue("gray.800", "white")}
+                    align={"center"}
+                  >
+                    <Text
+                      fontSize={"sm"}
+                      fontWeight={500}
+                      bg={useColorModeValue("green.50", "green.900")}
+                      p={2}
+                      px={3}
+                      color={"green.500"}
+                      rounded={"full"}
+                    >
+                      ECサイト
+                    </Text>
+                    <Stack
+                      direction={"row"}
+                      align={"center"}
+                      justify={"center"}
+                    >
+                      <Text fontSize={"3xl"}>¥</Text>
+                      <Text fontSize={"4xl"} fontWeight={800}>
+                        70000
+                      </Text>
+                      <Text color={"gray.500"}>/1ページ</Text>
+                    </Stack>
+                  </Stack>
+                  <Box
+                    bg={useColorModeValue("gray.50", "gray.900")}
+                    px={6}
+                    py={10}
+                  >
+                    <List spacing={3}>
+                      <ListItem>
+                        <ListIcon as={CheckIcon} color="green.400" />
+                        Laravelを使用して構築
+                      </ListItem>
+                      <ListItem>
+                        <ListIcon as={CheckIcon} color="green.400" />
+                        既存ページ一部コーディング修正3000円~
+                      </ListItem>
+                      <ListItem>
+                        <ListIcon as={CheckIcon} color="green.400" />
+                        ページコーディング作成　１ページ（極小規模） ⇒ 4500円～
+                      </ListItem>
+                    </List>
+                  </Box>
+                </Box>
+              </Center>
             </Card>
             <Button bg="green.200" mt={8}>
               <Link href="/works">Request a job</Link>
             </Button>
           </Box>
         </Section>
-        <Footer />
+        <Section>
+          <Heading as="h4">My SNS</Heading>
+          <Box mt={6}>
+            <Link target="_blank" href="https://twitter.com/8tfGpQ99poWMQFN">
+              <HStack>
+                <SiTwitter />
+                <Text>Twitter</Text>
+              </HStack>
+            </Link>
+          </Box>
+          <Box mt={6}>
+            <Link target="_blank" href="https://github.com/futureituki">
+              <HStack>
+                <IoLogoGithub />
+                <Text>Github</Text>
+              </HStack>
+            </Link>
+          </Box>
+          <Box mt={6}>
+            <Link target="_blank" href="https://github.com/futureituki">
+              <HStack>
+                <IoLogoInstagram />
+                <Text>Instagram</Text>
+              </HStack>
+            </Link>
+          </Box>
+        </Section>
       </Container>
     </>
   );

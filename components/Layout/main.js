@@ -4,6 +4,7 @@ import {
 import React from "react";
 import NavBar from "../navbar";
 import dynamic from "next/dynamic";
+import Footer from "../footer";
 import Loader from '../tree-loader' 
 const LaxyTree = dynamic(() => import('../tree'), {
   ssr: false,
@@ -17,6 +18,7 @@ const Main = ({children,router}) => {
       <Container pt={24} maxW="container.md">
         <LaxyTree />
         {children}
+        <Footer />
       </Container>
     </Box>
   )
