@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { loadGLTFModel } from "../lib/model";
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import { AvocadoContainer, AvocadoSpinner } from './avocado-loader';
+import { loadGLTFModel } from '../lib/model'
+import { AvocadoSpinner, AvocadoContainer } from './avocado-loader'
 
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4))
@@ -10,10 +10,10 @@ function easeOutCirc(x) {
 
 const VoxelAvo = () => {
   const refContainer = useRef()
-  const [loading,setLoading] = useState(true);
-  const [renderer,setRenderer] = useState();
-  const [_camera,setCamera] = useState();
-  const [target] = useState(new THREE.Vector3(-0.5,1.2,0))
+  const [loading, setLoading] = useState(true)
+  const [renderer, setRenderer] = useState()
+  const [_camera, setCamera] = useState()
+  const [target] = useState(new THREE.Vector3(-0.5, 1.2, 0))
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
       20 * Math.sin(0.2 * Math.PI),
@@ -21,20 +21,22 @@ const VoxelAvo = () => {
       20 * Math.cos(0.2 * Math.PI)
     )
   )
-  const [scene] = useState(new THREE.Scene());
-  const [_controls,setControls] = useState();
+  const [scene] = useState(new THREE.Scene())
+  const [_controls, setControls] = useState()
 
-  const handleWindowResize = useCallback(()=>{
-    const {current:container} = refContainer;
-    if(container && renderer){
-      const scW = container.clientWidth;
-      const scH = container.clientHeight;
+  const handleWindowResize = useCallback(() => {
+    const { current: container } = refContainer
+    if (container && renderer) {
+      const scW = container.clientWidth
+      const scH = container.clientHeight
 
-      renderer.setSize(scW,scH)
+      renderer.setSize(scW, scH)
     }
-  },[renderer])
-  useEffect(()=>{
-    const { current:container } = refContainer;
+  }, [renderer])
+
+  /* eslint-disable react-hooks/exhaustive-deps */
+  useEffect(() => {
+    const { current: container } = refContainer
     if (container && !renderer) {
       const scW = container.clientWidth
       const scH = container.clientHeight
@@ -79,7 +81,7 @@ const VoxelAvo = () => {
         animate()
         setLoading(false)
       })
-
+      console.log('hello')
       let req = null
       let frame = 0
       const animate = () => {
@@ -111,6 +113,7 @@ const VoxelAvo = () => {
       }
     }
   },[])
+
   useEffect(() => {
     window.addEventListener('resize', handleWindowResize, false)
     return () => {
