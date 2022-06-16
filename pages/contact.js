@@ -1,6 +1,7 @@
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
-import { Input,Heading } from "@chakra-ui/react";
+import { IoIosContact } from "react-icons/io";
+import { Input, Heading, HStack, Stack, FormLabel, Textarea, Button } from "@chakra-ui/react";
 import Section from "../components/section";
 const Contact = () => {
   const {
@@ -18,25 +19,45 @@ const Contact = () => {
 
   return (
     <>
-    <Section>
-    <Heading></Heading>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Input {...register("name")} />
-        <Input
-          {...register("email", {
-            required: true,
-            maxLength: 60,
-            pattern: {
-              value:
-                /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-              message: "メールアドレスの形式が不正です",
-            },
-          })}
-        />
-        <ErrorMessage errors={errors} name="email" />
-        <button type="submit">Submit</button>
-      </form>
-    </Section>
+      <Section>
+        <HStack>
+          <Heading fontSize={32}>Contact</Heading>
+          <IoIosContact fontSize={32} />
+        </HStack>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Stack mb={8} mt={8}>
+            <FormLabel>Name</FormLabel>
+            <Input {...register("name")} />
+            <ErrorMessage errors={errors} name="name" />
+          </Stack>
+          <Stack mb={8} mt={8}>
+            <FormLabel>Email</FormLabel>
+            <Input
+              {...register("email", {
+                required: true,
+                maxLength: 60,
+                pattern: {
+                  value:
+                    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                  message: "メールアドレスの形式が不正です",
+                },
+              })}
+            />
+          <ErrorMessage errors={errors} name="email" />
+          </Stack>
+          <Stack mb={8} mt={8}>
+            <FormLabel>Content</FormLabel>
+            <Textarea
+              {...register("content", {
+                required: true,
+                maxLength: 300,
+              })}
+            />
+          {/* <ErrorMessage errors={errors} name="content" /> */}
+          </Stack>
+          <Button bg="gray.200" type="submit">Submit</Button>
+        </form>
+      </Section>
     </>
   );
 };

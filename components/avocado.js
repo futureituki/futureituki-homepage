@@ -13,7 +13,7 @@ const VoxelAvo = () => {
   const [loading, setLoading] = useState(true)
   const [renderer, setRenderer] = useState()
   const [_camera, setCamera] = useState()
-  const [target] = useState(new THREE.Vector3(-0.5, 1.2, 0))
+  const [target] = useState(new THREE.Vector3(-0.7, 1.2, 0))
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
       20 * Math.sin(0.2 * Math.PI),
@@ -74,7 +74,7 @@ const VoxelAvo = () => {
       controls.target = target
       setControls(controls)
 
-      loadGLTFModel(scene, '/assets/Avocado.glb', {
+      loadGLTFModel(scene, '/untitled.glb', {
         receiveShadow: false,
         castShadow: false
       }).then(() => {
