@@ -1,4 +1,4 @@
-import { Image } from "@chakra-ui/react";
+import { Image, Text } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import Link from "next/link";
 const LogoBox = styled.span`
@@ -22,6 +22,14 @@ const Logo = () => {
     <Link href="/">
       <LogoBox>
         <Image src="/images/logo.png" width={20} height={20} />
+        <Text
+            color="black"
+            fontFamily='Anton sans-serif'
+            fontWeight="bold"
+            ml={3}
+          >
+            Itsuki Sato
+          </Text>
       </LogoBox>
     </Link>
   );

@@ -4,8 +4,8 @@ import {
 import React from "react";
 import NavBar from "../navbar";
 import dynamic from "next/dynamic";
-import Loader from '../avocado-loader' 
-const LaxyAvocado = dynamic(() => import('../avocado'), {
+import Loader from '../tree-loader' 
+const LaxyTree = dynamic(() => import('../tree'), {
   ssr: false,
   loading: () => <Loader />
 })
@@ -15,7 +15,7 @@ const Main = ({children,router}) => {
     <Box>
       <NavBar path={router.asPath}/>
       <Container pt={24} maxW="container.md">
-        <LaxyAvocado />
+        <LaxyTree />
         {children}
       </Container>
     </Box>

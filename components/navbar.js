@@ -68,6 +68,7 @@ const NavBar = (props) => {
         alignItems="center"
         flexGrow={1}
         mt={{ base: 4, md: 0 }}
+        mb={{base:0, md:2}}
       >
         <LinkItem href="/works" path={path}>
           Works
@@ -103,7 +104,10 @@ const NavBar = (props) => {
           twitter
         </LinkItem>
       </Stack>
-      <Box display={{ base: "inline-block", md: "none" }}>
+      <Box
+      alignItems="center"
+      mb={2}
+      display={{ base: "flex", md: "none" }}>
         <Menu isLazy id="navbar-menu">
           <MenuButton
             as={IconButton}

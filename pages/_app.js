@@ -6,6 +6,7 @@ import Layout from '../components/Layout/main'
 function MyApp({ Component, pageProps,router }) {
   return (
     <ChakraProvider>
+      <Fonts/>
       <Layout router={router}>
       <Component {...pageProps} key={router.route} />
       </Layout>
