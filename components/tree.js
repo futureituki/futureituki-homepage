@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from '../lib/model'
-import { AvocadoSpinner, AvocadoContainer } from './avocado-loader'
+import { TreeSpinner, TreeContainer } from './tree-loader'
 
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4))
@@ -13,7 +13,7 @@ const VoxelAvo = () => {
   const [loading, setLoading] = useState(true)
   const [renderer, setRenderer] = useState()
   const [_camera, setCamera] = useState()
-  const [target] = useState(new THREE.Vector3(-0.7, 1.2, 0))
+  const [target] = useState(new THREE.Vector3(-0.2, 1, -.9))
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
       20 * Math.sin(0.2 * Math.PI),
@@ -53,13 +53,13 @@ const VoxelAvo = () => {
 
       // 640 -> 240
       // 8   -> 6
-      const scale = scH * 0.005 + 4.8
+      const scale = scH * 0.05
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
         scale,
         -scale,
-        0.01,
+        0.05,
         50000
       )
       camera.position.copy(initialCameraPosition)
@@ -122,7 +122,7 @@ const VoxelAvo = () => {
   }, [renderer, handleWindowResize])
 
   return (
-    <AvocadoContainer ref={refContainer}>{loading && <AvocadoSpinner />}</AvocadoContainer>
+    <TreeContainer ref={refContainer}>{loading && <TreeSpinner />}</TreeContainer>
   )
 }
 

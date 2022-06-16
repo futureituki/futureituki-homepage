@@ -33,6 +33,7 @@ import Paragraph from "../components/paragraph";
 import Footer from "../components/footer";
 import Card from "../components/card";
 import { ListContent, ListHeading } from "../components/list";
+import { TreeSpinner } from "../components/tree-loader";
 const Home = () => {
   return (
     <>
