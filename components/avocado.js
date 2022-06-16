@@ -74,7 +74,7 @@ const VoxelAvo = () => {
       controls.target = target
       setControls(controls)
 
-      loadGLTFModel(scene, '/untitled.glb', {
+      loadGLTFModel(scene, '/tree.glb', {
         receiveShadow: false,
         castShadow: false
       }).then(() => {
