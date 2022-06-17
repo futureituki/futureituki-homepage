@@ -18,10 +18,13 @@ const Site1 = () => {
   return (
     <Container zIndex={3}>
       <Section>
-        <Heading as="h3">Clothes</Heading>
+        <Heading as="h3">スネークゲーム</Heading>
         <Paragraph>
-          都会のお洋服屋さんをイメージしたWEBサイトを作りました。
+          Techpitというサイトで受講して作ったスネークゲーム！GithubPageにデプロイしました。ぜひ遊んでみてください。
         </Paragraph>
+        <Link href="https://futureituki.github.io/hooks-snake-game/">
+        https://futureituki.github.io/hooks-snake-game/
+        </Link>
         <Box>
           <Heading
             as="h5"
@@ -36,8 +39,7 @@ const Site1 = () => {
             STACK
           </Heading>
           <HStack>
-            <Text>HTML</Text>
-            <Text>SCSS</Text>
+            <Text>CSS</Text>
             <Text>JavaScript</Text>
           </HStack>
         </Box>
@@ -54,25 +56,7 @@ const Site1 = () => {
           >
             Framework
           </Heading>
-          <Text>jQuery</Text>
-        </Box>
-        <Box>
-          <Heading
-            as="h5"
-            p={2}
-            fontSize={16}
-            mt={10}
-            mb={2}
-            bg="black"
-            width={24}
-            color="white"
-          >
-            Library
-          </Heading>
-          <Text>PACE.js</Text>
-          <Link href="https://codebyzach.github.io/pace/">
-              https://codebyzach.github.io/pace/
-          </Link>
+          <Text>React</Text>
         </Box>
         <Box>
           <Heading
@@ -88,20 +72,16 @@ const Site1 = () => {
             SOURCE
           </Heading>
           <Text>Github</Text>
-          <Link href="https://github.com/futureituki/Clothes-Shop">
-              https://github.com/futureituki/Clothes-Shop
+          <Link href="https://github.com/futureituki/hooks-snake-game">
+          https://github.com/futureituki/hooks-snake-game
           </Link>
         </Box>
         <Box mt={16}>
           <Text>*一部抜粋</Text>
         <Slider
           image={[
-            "/images/site1.png",
-            "/images/clothes/access.png",
-            "/images/clothes/about.png",
-            "/images/clothes/news.png",
-            "/images/clothes/service1.png",
-            "/images/clothes/service2.png",
+            "/images/snake.png",
+            "/images/snake2.png",
           ]}/>
         </Box>
       </Section>

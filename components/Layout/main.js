@@ -16,7 +16,7 @@ const Main = ({children,router}) => {
     <Box>
       <NavBar path={router.asPath}/>
       <Container pt={24} maxW="container.md">
-        <LaxyTree />
+        {/* <LaxyTree /> */}
         {children}
         <Footer />
       </Container>

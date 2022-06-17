@@ -57,16 +57,36 @@ const Works = () => {
           </HStack>
           <HStack>
             <Box mb={6}>
-              <Image m="auto" w={64} src="/images/site2.png" />
-              <Heading textAlign="center" mt={4} mb={4} as="h3" fontSize={16}>
-                架空サイト２
-              </Heading>
+            <NextLink href="works/site2" passHref>
+                <Link>
+                  <Image m="auto" w={64} src="/images/site2.png" />
+                  <Heading
+                    mt={4}
+                    mb={4}
+                    textAlign="center"
+                    as="h3"
+                    fontSize={16}
+                  >
+                    架空サイト2
+                  </Heading>
+                </Link>
+              </NextLink>
             </Box>
             <Box mb={6}>
-              <Image m="auto" w={64} src="/images/site1.png" />
-              <Heading mt={4} mb={4} textAlign="center" as="h3" fontSize={16}>
-                架空サイト１
-              </Heading>
+            <NextLink href="works/snake" passHref>
+                <Link>
+                  <Image m="auto" w={64} src="/images/snake.png" />
+                  <Heading
+                    mt={4}
+                    mb={4}
+                    textAlign="center"
+                    as="h3"
+                    fontSize={16}
+                  >
+                    スネークゲーム
+                  </Heading>
+                </Link>
+              </NextLink>
             </Box>
           </HStack>
         </Container>
