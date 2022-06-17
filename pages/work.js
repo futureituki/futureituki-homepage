@@ -8,7 +8,8 @@ import {
   Link,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import Paragraph from "../components/paragraph";
+import Paragraph from "../components/paragraph"
+import GridItems from '../components/gird'
 import Section from "../components/section";
 const Works = () => {
   return (
@@ -18,11 +19,13 @@ const Works = () => {
           <Heading as="h1" fontSize={20}>
             Works
           </Heading>
+          {/* <GridItems title="React-Movie" ImageUrl="/images/react-movie/react-movie.png" />
+          <GridItems title="React-Movie" ImageUrl="/images/site1.png" /> */}
           <HStack>
             <Box mb={6} zIndex={2}>
               <NextLink href="works/reactMovie" passHref>
                 <Link>
-                  <Image m="auto" w={64} src="/images/react-movie.png" />
+                  <Image m="auto" w={64} src="/images/react-movie/react-movie.png" />
                   <Heading
                     textAlign="center"
                     mt={4}
