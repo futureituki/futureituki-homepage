@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-
+import 'swiper/css/bundle'
 import { ChakraProvider } from '@chakra-ui/react'
 import Fonts from '../components/fonts'
 import Layout from '../components/Layout/main'

@@ -16,7 +16,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
-
+import NextLink from "next/link";
 import { GiFruitTree } from "react-icons/gi";
 import {
   SiJavascript,
@@ -71,10 +71,10 @@ const Home = () => {
               </Box>
             </Flex>
             <HStack display={{ base: "block", md: "flex" }}>
-              <Paragraph>Digital Craftsman ( FrontDeveloper )</Paragraph>
+              <Text fontSize={24}>Digital Craftsman ( FrontDeveloper )</Text>
               <Box align="center">
                 <Image
-                  src="/images/me.jpg"
+                  src="/images/me.png"
                   maxWidth="200px"
                   maxHeight="200px"
                   marginTop={8}
@@ -91,19 +91,20 @@ const Home = () => {
           <Heading as="h3" mb={8} fontSize={24}>
             Work
           </Heading>
-          <Paragraph>
-            Takuya is a freelance and a full-stack developer based in Osaka with
-            a passion for building digital services/stuff he wants. He has a
-            knack for all things launching products, from planning and designing
-            all the way to solving real-life problems with code. When not
-            online, he loves hanging out with his camera. Currently, he is
-            living off of his own product called Inkdrop. He publishes content
-            for marketing his products and his YouTube channel called "Dev as
-            Life" has more than 100k subscribers.
-          </Paragraph>
+          <Box zIndex={3}>
+            <Paragraph>
+              主にWeb制作を中心にLPや企業HPを作成いたします。将来はフロントエンジニアを目指し、ReactやLaravelを勉強しています。このサイトはReactのライブラリのNext.jsを使って作成しています。
+              <Link href="https://github.com/CreateWebSiteTeam">
+                CreateWebSiteTeam
+              </Link>
+              というチームでWebサイトを制作しています。日々の生活は音楽を聴いたり、Netflixを趣味としています。
+            </Paragraph>
+          </Box>
           <Box textAlign="center" mt={8} mb={8} p={6}>
             <Button bg="green.200">
-              <Link href="/work">My-Portfolio</Link>
+              <NextLink href="/work" passHref>
+                <Link>My Portfolio</Link>
+              </NextLink>
             </Button>
           </Box>
         </Section>
@@ -122,11 +123,11 @@ const Home = () => {
               <SiLaravel fontSize={24} />
               <SiWordpress fontSize={24} />
               <SiNextdotjs fontSize={24} />
+              <SiReact fontSize={32} />
             </ListContent>
             <ListHeading>Library</ListHeading>
             <ListContent>
               <SiJquery fontSize={24} />
-              <SiReact fontSize={32} />
               <SiNodedotjs fontSize={24} />
               <SiTailwindcss fontSize={24} />
               <SiBootstrap fontSize={24} />
@@ -267,7 +268,9 @@ const Home = () => {
               </Center>
             </Card>
             <Button bg="green.200" mt={8}>
-              <Link href="/contact">Request a job</Link>
+              <NextLink href="/contact" passHref>
+                <Link>Request a Jobs</Link>
+              </NextLink>
             </Button>
           </Box>
         </Section>

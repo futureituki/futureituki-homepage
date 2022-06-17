@@ -3,10 +3,10 @@ import { Heading, Box, Container, HStack, Text, Link, Image } from "@chakra-ui/r
 
 import Section from "../../components/section";
 import Paragraph from "../../components/paragraph";
-
+import Slider from "../../components/slider";
 const ReactMovie = () => {
   return (
-    <Container>
+    <Container zIndex={3}>
       <Section>
         <Heading as="h3">RaectMovie-Search</Heading>
         <Paragraph>
@@ -45,10 +45,8 @@ const ReactMovie = () => {
             API
           </Heading>
           <Text>TMDB</Text>
-          <Link>
-            <a href="https://www.themoviedb.org/?language=ja">
+          <Link href="https://www.themoviedb.org/?language=ja">
               https://www.themoviedb.org/?language=ja
-            </a>
           </Link>
         </Box>
         <Box>
@@ -65,27 +63,20 @@ const ReactMovie = () => {
             SOURCE
           </Heading>
           <Text>Github</Text>
-          <Link>
-            <a href="https://github.com/futureituki/Movie-search">
+          <Link href="https://github.com/futureituki/Movie-search">
             https://github.com/futureituki/Movie-search
-            </a>
           </Link>
         </Box>
-        <Box mt={4} mb={4}>
-          <Image
-          src="/images/react-movie/category.png"/>
-          <Paragraph>カテゴリー別</Paragraph>
+        <Box mt={16} mb={4}>
+          <Slider image={[
+            "/images/react-movie/category.png",
+            "/images/react-movie/invidual.png",
+            "/images/react-movie/search.png"
+          ]} />
         </Box>
-        <Box mt={4} mb={4}>
-          <Image
-          src="/images/react-movie/invidual.png"/>
+          {/* <Paragraph>カテゴリー別</Paragraph>
           <Paragraph>個別ページ</Paragraph>
-        </Box>
-        <Box mt={4} mb={4}>
-          <Image
-          src="/images/react-movie/search.png"/>
-          <Paragraph>サーチ機能</Paragraph>
-        </Box>
+          <Paragraph>サーチ機能</Paragraph> */}
       </Section>
     </Container>
   );

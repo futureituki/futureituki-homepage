@@ -86,7 +86,7 @@ const NavBar = (props) => {
           pl={2}
         >
           <IoLogoGithub />
-          github
+          Source
         </LinkItem>
         <LinkItem
           target="_blank"
@@ -98,7 +98,7 @@ const NavBar = (props) => {
           pl={2}
         >
           <AiOutlineTwitter/>
-          twitter
+          Twitter
         </LinkItem>
       </Stack>
       <Box
@@ -116,17 +116,17 @@ const NavBar = (props) => {
             <NextLink href="/" passHref>
               <MenuItem as={Link}>About</MenuItem>
             </NextLink>
-            <NextLink href="/works" passHref>
+            <NextLink href="/work" passHref>
               <MenuItem as={Link}>Works</MenuItem>
             </NextLink>
             <NextLink href="/contact" passHref>
               <MenuItem as={Link}>Contact</MenuItem>
             </NextLink>
             <MenuItem as={Link} href="https://github.com/futureituki">
-              github
+              Source
             </MenuItem>
             <MenuItem as={Link} href="https://twitter.com/8tfGpQ99poWMQFN">
-              twitter
+              Twitter
             </MenuItem>
           </MenuList>
         </Menu>

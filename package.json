@@ -21,6 +21,7 @@
     "react-hook-form": "^7.32.1",
     "react-icons": "^4.4.0",
     "react-three": "^0.9.7",
+    "swiper": "^8.2.4",
     "three": "^0.141.0"
   },
   "devDependencies": {
