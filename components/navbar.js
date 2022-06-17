@@ -70,11 +70,8 @@ const NavBar = (props) => {
         mt={{ base: 4, md: 0 }}
         mb={{base:0, md:2}}
       >
-        <LinkItem href="/works" path={path}>
+        <LinkItem href="/work" path={path}>
           Works
-        </LinkItem>
-        <LinkItem href="/price" path={path}>
-          Price
         </LinkItem>
         <LinkItem href="/contact" path={path}>
           Contact
