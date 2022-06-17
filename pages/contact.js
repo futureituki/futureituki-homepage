@@ -1,7 +1,7 @@
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
 import { IoIosContact } from "react-icons/io";
-import { Input, Heading, HStack, Stack, FormLabel, Textarea, Button } from "@chakra-ui/react";
+import { Input, Heading, HStack, Stack, FormLabel, Textarea, Button, Text } from "@chakra-ui/react";
 import Section from "../components/section";
 const Contact = () => {
   const {
@@ -27,8 +27,17 @@ const Contact = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <Stack mb={8} mt={8}>
             <FormLabel>Name</FormLabel>
-            <Input {...register("name")} />
-            <ErrorMessage errors={errors} name="name" />
+            <Input {...register("name",{
+              required:true,
+              maxLength:3,
+              pattern:{
+                value:/^[^\x01-\x7E]$/,
+                message:"全角で3文字以上入力してください"
+              }
+            })} />
+            <Text color="red">
+            <ErrorMessage color="red" errors={errors} name="name" />
+            </Text>
           </Stack>
           <Stack mb={8} mt={8}>
             <FormLabel>Email</FormLabel>
@@ -43,7 +52,9 @@ const Contact = () => {
                 },
               })}
             />
+          <Text color="red">
           <ErrorMessage errors={errors} name="email" />
+          </Text>
           </Stack>
           <Stack mb={8} mt={8}>
             <FormLabel>Content</FormLabel>
@@ -51,9 +62,13 @@ const Contact = () => {
               {...register("content", {
                 required: true,
                 maxLength: 300,
+                pattern:{
+                  value:100,
+                  message:"100文字以上入力してください",
+                }
               })}
             />
-          {/* <ErrorMessage errors={errors} name="content" /> */}
+          <ErrorMessage errors={errors} name="content" />
           </Stack>
           <Button bg="gray.200" type="submit">Submit</Button>
         </form>

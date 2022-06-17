@@ -61,18 +61,18 @@ const Home = () => {
           >
             Welcome, My Portfolio, come Japan
           </Box>
-          <Box position="relative" zIndex={3}>
+          <Box position="relative">
             <Flex display="flex">
               <Heading as="h2" fontWeight="bold" letterSpacing={2}>
                 Sato Itsuki
               </Heading>
-              <Box zIndex={3}>
+              <Box>
                 <GiFruitTree fontSize={36} />
               </Box>
             </Flex>
             <HStack display={{ base: "block", md: "flex" }}>
               <Paragraph>Digital Craftsman ( FrontDeveloper )</Paragraph>
-              <Box align="center" zIndex={3}>
+              <Box align="center">
                 <Image
                   src="/images/me.jpg"
                   maxWidth="200px"
@@ -103,7 +103,7 @@ const Home = () => {
           </Paragraph>
           <Box textAlign="center" mt={8} mb={8} p={6}>
             <Button bg="green.200">
-              <Link href="/works">My-Portfolio</Link>
+              <Link href="/work">My-Portfolio</Link>
             </Button>
           </Box>
         </Section>
@@ -267,7 +267,7 @@ const Home = () => {
               </Center>
             </Card>
             <Button bg="green.200" mt={8}>
-              <Link href="/works">Request a job</Link>
+              <Link href="/contact">Request a job</Link>
             </Button>
           </Box>
         </Section>
