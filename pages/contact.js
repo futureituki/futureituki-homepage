@@ -1,21 +1,24 @@
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
 import { IoIosContact } from "react-icons/io";
-import { Input, Heading, HStack, Stack, FormLabel, Textarea, Button, Text } from "@chakra-ui/react";
+import {
+  Input,
+  Heading,
+  HStack,
+  Stack,
+  FormLabel,
+  Textarea,
+  Button,
+  Text,
+} from "@chakra-ui/react";
 import Section from "../components/section";
 const Contact = () => {
   const {
     register,
     formState: { errors },
-    handleSubmit,
-    reset,
   } = useForm({
     mode: "all",
   });
-  const onSubmit = (data) => {
-    reset();
-  };
-
   return (
     <>
       <Section>
@@ -23,21 +26,22 @@ const Contact = () => {
           <Heading fontSize={32}>Contact</Heading>
           <IoIosContact fontSize={32} />
         </HStack>
-        <form action="https://getform.io/f/92bed40b-f232-4fd2-a2c8-a85427af0782" method="POST" >
+        <form
+          action="https://getform.io/f/92bed40b-f232-4fd2-a2c8-a85427af0782"
+          method="POST"
+        >
           <Stack mb={8} mt={8}>
             <FormLabel>Name</FormLabel>
-            <Input {...register("name",{
-              required:true,
-            })} />
+            <Input required {...register("name")} />
             <Text color="red">
-            <ErrorMessage color="red" errors={errors} name="name" />
+              <ErrorMessage color="red" errors={errors} name="name" />
             </Text>
           </Stack>
           <Stack mb={8} mt={8}>
             <FormLabel>Email</FormLabel>
             <Input
+              required
               {...register("email", {
-                required: true,
                 maxLength: 60,
                 pattern: {
                   value:
@@ -46,25 +50,27 @@ const Contact = () => {
                 },
               })}
             />
-          <Text color="red">
-          <ErrorMessage errors={errors} name="email" />
-          </Text>
+            <Text color="red">
+              <ErrorMessage errors={errors} name="email" />
+            </Text>
           </Stack>
           <Stack mb={8} mt={8}>
             <FormLabel>Content</FormLabel>
             <Textarea
+              required
               {...register("content", {
-                required: true,
                 maxLength: 300,
-                pattern:{
-                  value:100,
-                  message:"100文字以上入力してください",
-                }
+                pattern: {
+                  value: "",
+                  message: "100文字以上入力してください",
+                },
               })}
             />
-          <ErrorMessage errors={errors} name="content" />
+            <ErrorMessage errors={errors} name="content" />
           </Stack>
-          <Button bg="gray.200" type="submit">Submit</Button>
+          <Button bg="gray.200" type="submit">
+            Submit
+          </Button>
         </form>
       </Section>
     </>
