@@ -5,7 +5,6 @@ import {
   FormHelperText,
   FormErrorMessage
  } from "@chakra-ui/react"
-import { useState } from "react"
 
 const Form = ({handleInput, input, isError, type, errorMessage, formtext}) => {
   return(

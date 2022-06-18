@@ -8,7 +8,6 @@ import {
   Link,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import Paragraph from "../components/paragraph"
 import Section from "../components/section";
 
 const Works = () => {
@@ -19,8 +18,6 @@ const Works = () => {
           <Heading as="h1" fontSize={20}>
             Works
           </Heading>
-          {/* <GridItems title="React-Movie" ImageUrl="/images/react-movie/react-movie.png" />
-          <GridItems title="React-Movie" ImageUrl="/images/site1.png" /> */}
           <HStack display={{base:"block",md:"flex"}}>
             <Box mb={10} zIndex={2}>
               <NextLink href="works/reactMovie" passHref>

@@ -13,7 +13,6 @@ const Contact = () => {
     mode: "all",
   });
   const onSubmit = (data) => {
-    console.log(data);
     reset();
   };
 
@@ -24,16 +23,11 @@ const Contact = () => {
           <Heading fontSize={32}>Contact</Heading>
           <IoIosContact fontSize={32} />
         </HStack>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form action="https://getform.io/f/92bed40b-f232-4fd2-a2c8-a85427af0782" method="POST" >
           <Stack mb={8} mt={8}>
             <FormLabel>Name</FormLabel>
             <Input {...register("name",{
               required:true,
-              maxLength:3,
-              pattern:{
-                value:/^[^\x01-\x7E]$/,
-                message:"全角で3文字以上入力してください"
-              }
             })} />
             <Text color="red">
             <ErrorMessage color="red" errors={errors} name="name" />
