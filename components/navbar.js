@@ -78,7 +78,7 @@ const NavBar = (props) => {
         </LinkItem>
         <LinkItem
           target="_blank"
-          href="https://github.com/futureituki"
+          href="https://github.com/futureituki/futureituki-homepage"
           path={path}
           display="inline-flex"
           alignItems="center"

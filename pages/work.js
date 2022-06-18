@@ -8,9 +8,8 @@ import {
   Link,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import Paragraph from "../components/paragraph"
-import GridItems from '../components/gird'
 import Section from "../components/section";
+
 const Works = () => {
   return (
     <>
@@ -19,10 +18,8 @@ const Works = () => {
           <Heading as="h1" fontSize={20}>
             Works
           </Heading>
-          {/* <GridItems title="React-Movie" ImageUrl="/images/react-movie/react-movie.png" />
-          <GridItems title="React-Movie" ImageUrl="/images/site1.png" /> */}
-          <HStack>
-            <Box mb={6} zIndex={2}>
+          <HStack display={{base:"block",md:"flex"}}>
+            <Box mb={10} zIndex={2}>
               <NextLink href="works/reactMovie" passHref>
                 <Link>
                   <Image m="auto" w={64} src="/images/react-movie/react-movie.png" />
@@ -55,18 +52,38 @@ const Works = () => {
               </NextLink>
             </Box>
           </HStack>
-          <HStack>
-            <Box mb={6}>
-              <Image m="auto" w={64} src="/images/site2.png" />
-              <Heading textAlign="center" mt={4} mb={4} as="h3" fontSize={16}>
-                架空サイト２
-              </Heading>
+          <HStack display={{base:"block",md:"flex"}}>
+            <Box mb={10}>
+            <NextLink href="works/site2" passHref>
+                <Link>
+                  <Image m="auto" w={64} src="/images/site2.png" />
+                  <Heading
+                    mt={4}
+                    mb={4}
+                    textAlign="center"
+                    as="h3"
+                    fontSize={16}
+                  >
+                    架空サイト2
+                  </Heading>
+                </Link>
+              </NextLink>
             </Box>
-            <Box mb={6}>
-              <Image m="auto" w={64} src="/images/site1.png" />
-              <Heading mt={4} mb={4} textAlign="center" as="h3" fontSize={16}>
-                架空サイト１
-              </Heading>
+            <Box mb={10}>
+            <NextLink href="works/snake" passHref>
+                <Link>
+                  <Image m="auto" w={64} src="/images/snake.png" />
+                  <Heading
+                    mt={4}
+                    mb={4}
+                    textAlign="center"
+                    as="h3"
+                    fontSize={16}
+                  >
+                    スネークゲーム
+                  </Heading>
+                </Link>
+              </NextLink>
             </Box>
           </HStack>
         </Container>
