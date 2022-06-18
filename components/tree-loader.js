@@ -18,7 +18,6 @@ export const TreeSpinner = () => {
 export const TreeContainer = forwardRef(({ children }, ref) => (
   <Box
     ref={ref}
-    // className="voxel-dog"
     m="auto"
     mt={['-20px', '-60px', '0px']}
     mb={['-40px', '-140px', '-200px']}
