@@ -19,7 +19,7 @@ export const TreeContainer = forwardRef(({ children }, ref) => (
   <Box
       ref={ref}
       m="auto"
-    mt={['-80px', '-60px', '0px']}
+    mt={['-50px', '-60px', '-150px']}
     mb={['-40px', '-140px', '-200px']}
     w={[280, 480, 640]}
     h={[280, 480, 540]}

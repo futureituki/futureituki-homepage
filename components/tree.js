@@ -13,12 +13,12 @@ const VoxelAvo = () => {
   const [loading, setLoading] = useState(true)
   const [renderer, setRenderer] = useState()
   const [_camera, setCamera] = useState()
-  const [target] = useState(new THREE.Vector3(0,0, 0))
+  const [target] = useState(new THREE.Vector3(0,10,0))
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
-      20 * Math.sin(0.2 * Math.PI),
+      10 * Math.sin(0.2 * Math.PI),
       10,
-      20 * Math.cos(0.2 * Math.PI)
+      20 * Math.cos(10 * Math.PI)
     )
   )
   const [scene] = useState(new THREE.Scene())
@@ -53,20 +53,20 @@ const VoxelAvo = () => {
 
       // 640 -> 240
       // 8   -> 6
-      const scale = scH * 0.05
+      const scale = scH * 0.1
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
         scale,
         -scale,
         0.05,
-        20000
+        30000
       )
       camera.position.copy(initialCameraPosition)
       camera.lookAt(target)
       setCamera(camera)
 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, 1)
+      const ambientLight = new THREE.DirectionalLight(0xFFFFFF, 1);
       scene.add(ambientLight)
 
       const controls = new OrbitControls(camera, renderer.domElement)
@@ -75,13 +75,12 @@ const VoxelAvo = () => {
       setControls(controls)
 
       loadGLTFModel(scene, '/tree.glb', {
-        receiveShadow: false,
-        castShadow: false
+        receiveShadow: true,
+        castShadow: true
       }).then(() => {
         animate()
         setLoading(false)
       })
-      console.log('hello')
       let req = null
       let frame = 0
       const animate = () => {
@@ -91,7 +90,7 @@ const VoxelAvo = () => {
 
         if (frame <= 100) {
           const p = initialCameraPosition
-          const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20
+          const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 30
 
           camera.position.y = 10
           camera.position.x =
