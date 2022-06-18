@@ -5,7 +5,7 @@ import React from "react";
 import NavBar from "../navbar";
 import dynamic from "next/dynamic";
 import Footer from "../footer";
-import Loader from '../tree-loader' 
+import Loader from '../loader' 
 const LaxyTree = dynamic(() => import('../tree'), {
   ssr: false,
   loading: () => <Loader />
