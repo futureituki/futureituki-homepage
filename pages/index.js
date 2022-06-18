@@ -59,7 +59,7 @@ const Home = () => {
             bg="blackAlpha.100"
             css={{ backdropFilter: "blur(10px)" }}
           >
-            Welcome, My Portfolio, come Japan
+            Welcome, My Portfolio, Thank you!!
           </Box>
           <Box position="relative">
             <Flex display="flex">
@@ -201,7 +201,7 @@ const Home = () => {
                       </ListItem>
                       <ListItem>
                         <ListIcon as={CheckIcon} color="green.400" />
-                        ページコーディング作成　１ページ（極小規模） ⇒ 4500円～
+                        ページコーディング作成　１ページ（極小規模） ⇒ 2500円～
                       </ListItem>
                     </List>
                   </Box>
