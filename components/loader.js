@@ -36,5 +36,4 @@ const Loader = () => {
     </TreeContainer>
   )
 }
-
 export default Loader
