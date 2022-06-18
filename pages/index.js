@@ -82,6 +82,7 @@ const Home = () => {
                   borderRadius="full"
                   borderStyle="solid"
                   borderColor="green.200"
+                  alt="いつきの写真"
                 />
               </Box>
             </HStack>
